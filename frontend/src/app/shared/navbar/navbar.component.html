@@ -1,0 +1,10 @@
+<nav class="navbar">
+  <div class="logo">
+    <a routerLink="/dashboard">My Blog</a>
+  </div>
+  <ul class="nav-links">
+    <li><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+    <li><a routerLink="/blog" routerLinkActive="active">Blogs</a></li>
+    <li><a (click)="onLogout()" class="logout-btn">Logout</a></li>
+  </ul>
+</nav>

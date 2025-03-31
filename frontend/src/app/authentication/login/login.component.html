@@ -1,0 +1,59 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="card shadow-lg rounded-3">
+        <div class="card-body">
+          <h3 class="text-center mb-4">Login</h3>
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group mb-3">
+              <label for="username">Username</label>
+              <input type="text" id="username" class="form-control" formControlName="email" />
+              <div class="text-danger"
+                *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].hasError('required')">
+                this filed is required
+              </div>
+            </div>
+            <div class="form-group mb-3">
+              <label for="password">Password</label>
+              <input type="password" id="password" class="form-control" formControlName="password" />
+              <div class="text-danger"
+                *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].hasError('required')">
+                Password is required
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+          </form>
+        </div>
+        <div class="card-footer text-center bg-white">
+          <button [routerLink]="['/auth/register']" routerLinkActive="router-link-active" class="btn signup-btn">Sign
+            Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .signup-btn {
+    background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+    border: none;
+    padding: 10px 20px;
+    width: 90%;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+  }
+
+  .signup-btn:hover {
+    background: linear-gradient(45deg, #ff8e53, #ff6b6b);
+    box-shadow: 0 6px 14px rgba(255, 107, 107, 0.5);
+  }
+
+  .card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+</style>

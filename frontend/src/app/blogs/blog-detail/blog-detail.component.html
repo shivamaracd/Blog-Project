@@ -1,0 +1,6 @@
+<div *ngIf="blog">
+  <h2>{{ blog.title }}</h2>
+  <img [src]="'http://localhost:5000/'+blog.image" alt="Blog Image" width="200">
+  <p>{{ blog.description }}</p>
+  <button routerLink="/blog/blog">Back to Blogs</button>
+</div>

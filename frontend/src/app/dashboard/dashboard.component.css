@@ -1,0 +1,30 @@
+.dashboard-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  flex: 1;
+}
+
+h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+p {
+  color: #555;
+}
+
+.profile img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #007bff;
+  object-fit: cover;
+}

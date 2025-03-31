@@ -1,0 +1,37 @@
+<div class="container">
+  <h2>Manage Blogs</h2>
+
+  <form [formGroup]="blogForm" (ngSubmit)="onSubmit()">
+    <label>Title:</label>
+    <input type="text" formControlName="title" placeholder="Enter blog title" required />
+
+    <label>Image:</label>
+    <input type="file" (change)="onFileSelect($event)" />
+
+    <label>Description:</label>
+    <textarea formControlName="description" placeholder="Enter blog description"></textarea>
+
+    <button type="submit" [disabled]="blogForm.invalid">
+      {{ isEditing ? 'Update Blog' : 'Add Blog' }}
+    </button>
+  </form>
+
+  <table>
+    <tr>
+      <th>Image</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let blog of blogs">
+      <td><img [src]="'http://localhost:5000/'+blog.image" alt="Blog Image" /></td>
+      <td>{{ blog.title }}</td>
+      <td>{{ blog.description }}</td>
+      <td>
+        <button (click)="editBlog(blog)">Edit</button>&nbsp;&nbsp;
+        <button (click)="deleteBlog(blog.id)">Delete</button>&nbsp;&nbsp;
+        <button (click)="viewBlog(blog.id)">View</button>
+      </td>
+    </tr>
+  </table>
+</div>

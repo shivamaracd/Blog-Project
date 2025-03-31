@@ -1,0 +1,28 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg p-4">
+        <h2 class="text-center mb-4">Sign Up</h2>
+        <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-control" required [(ngModel)]="user.email" name="email">
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" class="form-control" required [(ngModel)]="user.password"
+              name="password">
+          </div>
+
+          <div class="mb-3">
+            <label for="profileImage" class="form-label">Profile Image</label>
+            <input type="file" id="profileImage" class="form-control" (change)="onFileChange($event)" accept="image/png, image/jpeg">
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100" [disabled]="!signupForm.form.valid">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
